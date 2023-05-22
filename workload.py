@@ -18,16 +18,28 @@ latex_knowledgd_env = jinja2.Environment(
     loader = jinja2.FileSystemLoader(os.path.abspath('.'))
 )
 
-template = latex_knowledgd_env.get_template('work_load.jinja2')
+template = latex_knowledgd_env.get_template('workload.jinja2')
 
 if __name__ == "__main__":
 
-    df = pd.read_excel('work_load.xlsx')
+    df = pd.read_excel('workload.xlsx')
+
+
+    cat = []
+    for i in df['task']:
+        cat.append(i)
+
+    index = cat
+    hrs = df['hour']
 
     rows = df.to_dict(orient = 'records')
+    tasks = df['task'].str.split(";").squeeze()
+    hours = df['hour'].str.split(";").squeeze()
 
 
-    with open("bs.tex", "w") as f:
-    f.write(template.render(
-        rows = rows
-        ))
+    with open("workload.tex", "w") as f:
+        f.write(template.render(
+            rows = rows,
+            tasks = tasks,
+            hours = hours
+            ))
