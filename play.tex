@@ -63,11 +63,11 @@ fill=customcolor,draw=black,opacity=1,thin,solid,mark=no,mark options=solid,\\%
     ,
     ]
 
-        \addplot  + table [x={x},y={y},meta index=2,col sep=semicolon] {
-        x; y; z
-        JMA; 15; 0
-        ERM; 10; 0
-        ADMIN; 10; 0
+        \addplot  + table [x={x},y={y},meta index=2,col sep=comma] {
+        x, y, z
+        JMA, 15, 0
+        ERM, 10, 0
+        ADMIN, 10, 0
         };
 
 \end{axis}

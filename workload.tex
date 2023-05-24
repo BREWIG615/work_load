@@ -32,20 +32,19 @@ fill=customcolor,draw=black,opacity=1,thin,solid,mark=no,mark options=solid,\\%
     
 \begin{axis}
 [
-%    xbar, <--- comment this line 
     cycle list name=defaultCycle,
     width=0.8\linewidth,
     height=0.15\textheight,
     use units,
     scale only axis,
-    symbolic x coords={ %<-------must fix spacing
-            JMA
-            ERM
-            ADMIN
+    symbolic x coords={ 
+            JMA,
+            ERM,
+            ADMIN,
     },
     xtick=data,
     nodes near coords,
-    yticklabel style={/pgf/number format/fixed},,
+    yticklabel style={/pgf/number format/fixed},
     ytick pos=left,
     axis y line*=left,
     xtick pos=bottom,
@@ -67,20 +66,10 @@ fill=customcolor,draw=black,opacity=1,thin,solid,mark=no,mark options=solid,\\%
     ,
     ]
 
-    \addplot  + table [x={x},y={y},meta index=2,col sep=semicolon] {
-    x; y; z
-    JMA;
-        15
-        15
-        10
-    ERM;
-        15
-        15
-        10
-    ADMIN;
-        15
-        15
-        10
+    \addplot  + table [x={x},y={y},meta index=2,col sep=comma] {
+    x, y, z
+    ['JMA', 'ERM', 'ADMIN']
+    ['15', '15', '10']
     0
     };
 
@@ -95,20 +84,19 @@ fill=customcolor,draw=black,opacity=1,thin,solid,mark=no,mark options=solid,\\%
     
 \begin{axis}
 [
-%    xbar, <--- comment this line 
     cycle list name=defaultCycle,
     width=0.8\linewidth,
     height=0.15\textheight,
     use units,
     scale only axis,
-    symbolic x coords={ %<-------must fix spacing
-            unplanned
-            POM25
-            POM26
+    symbolic x coords={ 
+            unplanned,
+            POM25,
+            POM26,
     },
     xtick=data,
     nodes near coords,
-    yticklabel style={/pgf/number format/fixed},,
+    yticklabel style={/pgf/number format/fixed},
     ytick pos=left,
     axis y line*=left,
     xtick pos=bottom,
@@ -130,20 +118,10 @@ fill=customcolor,draw=black,opacity=1,thin,solid,mark=no,mark options=solid,\\%
     ,
     ]
 
-    \addplot  + table [x={x},y={y},meta index=2,col sep=semicolon] {
-    x; y; z
-    unplanned;
-        5
-        25
-        10
-    POM25;
-        5
-        25
-        10
-    POM26;
-        5
-        25
-        10
+    \addplot  + table [x={x},y={y},meta index=2,col sep=comma] {
+    x, y, z
+    ['unplanned', 'POM25', 'POM26']
+    ['5', '25', '10']
     0
     };
 
@@ -158,20 +136,19 @@ fill=customcolor,draw=black,opacity=1,thin,solid,mark=no,mark options=solid,\\%
     
 \begin{axis}
 [
-%    xbar, <--- comment this line 
     cycle list name=defaultCycle,
     width=0.8\linewidth,
     height=0.15\textheight,
     use units,
     scale only axis,
-    symbolic x coords={ %<-------must fix spacing
-            Admin
-            24BES
-            24Spend plan
+    symbolic x coords={ 
+            Admin,
+            24BES,
+            24Spend plan,
     },
     xtick=data,
     nodes near coords,
-    yticklabel style={/pgf/number format/fixed},,
+    yticklabel style={/pgf/number format/fixed},
     ytick pos=left,
     axis y line*=left,
     xtick pos=bottom,
@@ -193,20 +170,10 @@ fill=customcolor,draw=black,opacity=1,thin,solid,mark=no,mark options=solid,\\%
     ,
     ]
 
-    \addplot  + table [x={x},y={y},meta index=2,col sep=semicolon] {
-    x; y; z
-    Admin;
-        15
-        8
-        17
-    24BES;
-        15
-        8
-        17
-    24Spend plan;
-        15
-        8
-        17
+    \addplot  + table [x={x},y={y},meta index=2,col sep=comma] {
+    x, y, z
+    ['Admin', '24BES', '24Spend plan']
+    ['15', '8', '17']
     0
     };
 
