@@ -1,0 +1,10 @@
+env
+*.pdf
+*.fls
+*.gz
+*.log
+*.aux
+*.tex
+*.latexmk
+*.tex
+*.xlsx
