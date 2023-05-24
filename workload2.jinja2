@@ -1,7 +1,5 @@
-\BLOCK{ macro format_element(row_dict,
-    task_list,
-    hour_list,
-    duh_list)}
+\BLOCK{ macro format_element(row_dict)
+    }
 
 \begin{axis}
 [
@@ -10,11 +8,7 @@
     height=0.15\textheight,
     use units,
     scale only axis,
-    symbolic x coords={ 
-        %% for tasks in task_list
-            \VAR{tasks},
-        %% endfor
-    },
+    symbolic x coords={\VAR{variable}},
     xtick=data,
     nodes near coords,
     yticklabel style={/pgf/number format/fixed},
@@ -41,9 +35,6 @@
 
     \addplot  + table [x={x},y={y},meta index=2,col sep=comma] {
     x, y, z
-    %% for i in duh_list
-    \VAR{i}
-    %% endfor
     };
 
 \end{axis}
@@ -86,10 +77,7 @@ fill=customcolor,draw=black,opacity=1,thin,solid,mark=no,mark options=solid,\\%
 
 %% for i in range(rows | length)
 
-    \VAR{format_element(rows[i],
-    tasks[i],
-    hours[i],
-    duh[i])}
+    \VAR{format_element(rows[i])}
 
 %% endfor
 
